@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Application</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+
+        p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: #10b981;
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .info {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: #f3f4f6;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            color: #4b5563;
+        }
+
+        .timestamp {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #9ca3af;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✓ Test Application</h1>
+        <p>Your deployment is working perfectly!</p>
+        <div class="status">LIVE</div>
+        <div class="info">
+            <strong>Status:</strong> All systems operational<br>
+            <strong>Version:</strong> 1.0.0<br>
+            <strong>Environment:</strong> Production
+        </div>
+        <div class="timestamp" id="timestamp"></div>
+    </div>
+
+    <script>
+        document.getElementById('timestamp').textContent =
+            'Loaded at: ' + new Date().toLocaleString();
+    </script>
+</body>
+</html>
